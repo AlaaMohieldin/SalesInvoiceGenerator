@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class Frame extends Component {
@@ -84,7 +85,31 @@ public class Frame extends Component {
             SaveButton.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     SaveButtonActionPerformed(evt);
-                }
+           /*         JFileChooser fc1= new JFileChooser();
+                    int result1= fc1.showSaveDialog(this);
+                    if (result1==JFileChooser.APPROVE_OPTION){
+                        String path = fc1.getSelectedFile().getPath();
+                        FileOutputStream fos=null;
+                            try{
+                            fos = new FileOutputStream(path);
+                            byte [] b = ta.getText().getBytes;
+                            fos.write(b);
+
+                            }catch(FileNotFoundException e){
+                                e.printStackTrace();}
+                            catch {
+                                (IOException e){
+                                    e.printStackTrace();
+                                }
+                                Finally{
+                                    try{fis.close();
+
+                                    }catch(IOException e){
+
+                        }
+                    }
+
+                }*/}
             });
 
             CancelButton.setText("Cancel");
@@ -120,6 +145,7 @@ public class Frame extends Component {
             FileJMenu.setText("File");
             FileJMenu.addComponentListener(new java.awt.event.ComponentAdapter() {
                 public void componentHidden(java.awt.event.ComponentEvent evt) {
+
                     FileJMenuComponentHidden(evt);
                 }
             });
@@ -139,11 +165,24 @@ public class Frame extends Component {
 
                         String path =fc.getSelectedFile().getPath();
                         FileInputStream fis= null;
+                        try {
+                        fis new FileInputStream(path);
+                        int size =fis.available();
+                        byte[] b= new byte[size];
+                        fis.read(b);
+                        jTable2.setText(new String(b));
+                        }catch(FileNotFoundException e){
+                        e.printStackTrace();
+                        }
+                        Finally{
+                        try{fis.close();
 
+                        }catch(IOException e){
 
-                }
+                        }
+                    }
 
-                }*/
+                  }*/
             }
             FileJMenu.add(LoadFile);
 
