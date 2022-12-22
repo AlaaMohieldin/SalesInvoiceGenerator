@@ -94,6 +94,8 @@ public class Frame extends Component {
                 }
             });
 
+
+
             jTable2.setModel(new javax.swing.table.DefaultTableModel(
                     new Object [][] {
                             {null, null, null, null},
